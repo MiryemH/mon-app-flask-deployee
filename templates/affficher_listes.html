@@ -1,0 +1,33 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        {% if lst_roles|length == 0  %}
+            <h4> Aucun rôle  n'est enregistré </h4>
+        {% endif%}
+        {% if lst_users|length == 0 %}
+            <h4> Aucun utilisateur n'est enregistré </h4>
+        {% endif %}
+        {% if lst_roles|length != 0 %}
+            <h4> Voici la liste des rôles disponibles: </h4>
+            <ul>
+                {% for role in lst_roles  %}
+                <li>{{role}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %} 
+        {% if lst_users|length != 0%}
+        <h4> Voici la liste des utilisateurs disponibles: </h4>
+        <ul>
+            {% for user in lst_users  %}
+               <li>{{user}}</li>
+            {% endfor %}
+          </ul>
+        {% endif %} 
+        
+    </div>
+    
+</div>
+
+{% endblock %}
